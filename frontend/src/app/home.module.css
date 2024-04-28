@@ -1,0 +1,29 @@
+.link {
+  border-bottom: 1px solid transparent
+}
+
+.link:hover {
+  border-color: white;
+}
+
+.responsive_height {
+  @media screen and (max-width: 600px) {
+    height: 100vh;
+  }
+}
+
+.responsive_top_image {
+  @media screen and (max-width: 600px) {
+    width: 230px;
+    height: 140px;
+    margin-bottom: 20px;
+  }
+}
+
+.responsive_bottom_image {
+  @media screen and (max-width: 600px) {
+    width: 230px;
+    height: 140px;
+    margin-left: 100px;
+  }
+}
