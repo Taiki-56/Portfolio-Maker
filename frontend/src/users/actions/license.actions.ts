@@ -5,7 +5,8 @@ import jwt from 'jsonwebtoken';
 import { revalidatePath, revalidateTag } from 'next/cache';
 import { cookies } from "next/headers";
 
-const API_URL = process.env.API_URL ?? "http://localhost:4000";
+const API_URL = process.env.API_URL ?? 'https://portfolio-maker-3ny1.onrender.com:4000';
+// const API_URL = process.env.API_URL ?? "http://localhost:4000";
 
 export const updateLicense = async (license: License) => {
   const cookiesStore = cookies();

@@ -3,10 +3,11 @@
 import { revalidatePath } from 'next/cache';
 import { cookies } from 'next/headers';
 
-const API_URL = process.env.API_URL ?? 'http://localhost:4000';
+const API_URL = process.env.API_URL ?? 'https://portfolio-maker-3ny1.onrender.com:4000';
+// const API_URL = process.env.API_URL ?? 'http://localhost:4000';
 
 export const getPortfolio = async (id: string) => {
-	const cookiesStore = 	cookies();
+	const cookiesStore = cookies();
 	const token = cookiesStore.get('token');
 	const response = await fetch(`${API_URL}/api/portfolio/${id}`, {
 		headers: {
@@ -54,11 +55,11 @@ export const getPortfolioByTinyUrlId = async (tinyUrlId: string) => {
 
 type ResponsePortfolioStatus =
 	| {
-			message: string;
-			portfolio: {
-				type: "published" | "draft";
-			};
-		}
+		message: string;
+		portfolio: {
+			type: "published" | "draft";
+		};
+	}
 	| { error: string; };
 
 export const publishPortfolio = async (portfolioId: string): Promise<ResponsePortfolioStatus> => {

@@ -1,12 +1,13 @@
 "use server";
 
+import { User } from "@/interfaces";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { UsersSearch } from "../interfaces/users";
-import { User } from "@/interfaces";
 
-const API_URL = process.env.API_URL ?? "http://localhost:4000";
+const API_URL = process.env.API_URL ?? 'https://portfolio-maker-3ny1.onrender.com:4000';
+// const API_URL = process.env.API_URL ?? "http://localhost:4000";
 
 export const getUser = async (id: string): Promise<{ user: User } | { error: string; }> => {
   const cookiesStore = cookies();
@@ -30,10 +31,10 @@ export const fetchUsersByQuery = async (term: string, currentPage: number): Prom
     URL += `/search/${term}`;
   }
 
-  if (currentPage > 1)  {
+  if (currentPage > 1) {
     URL += `?page=${currentPage}`;
   }
-  
+
   const response = await fetch(URL, { headers: { "token": token?.value! } });
   return response.json();
 };
@@ -117,5 +118,5 @@ export const deleteUser = async (id: string) => {
   revalidateTag("users-table");
 
   redirect("/admin/users");
-  
+
 };
