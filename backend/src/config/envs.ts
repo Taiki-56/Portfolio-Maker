@@ -15,7 +15,8 @@ if (process.env.NODE_ENV === 'production') {
 
 export default {
   PORT: env.get("PORT").default(4000).asPortNumber(),
-  HOST: env.get("HOST").default("http://localhost").asString(),
+  HOST: env.get("HOST").default("https://portfolio-maker-3ny1.onrender.com").asString(),
+  // HOST: env.get("HOST").default("http://localhost").asString(),
   NODE_ENV: env.get("NODE_ENV").default("development").asString(),
   // TODO: PUBLIC_PATH: env.get('PUBLIC_PATH').default('public').asString(),
   JWT_SECRET: env.get("JWT_SECRET").required().asString(),
