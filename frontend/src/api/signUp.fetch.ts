@@ -1,6 +1,7 @@
 'use server';
 
-const API_URL = process.env.API_URL ?? "http://localhost:4000";
+const API_URL = process.env.API_URL ?? 'https://portfolio-maker-3ny1.onrender.com:4000';
+// const API_URL = process.env.API_URL ?? "http://localhost:4000";
 
 export type UserSignUp = {
   name: string;

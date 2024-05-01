@@ -1,8 +1,8 @@
 "use server";
 
-import { User } from "@/interfaces";
 
-const API_URL = process.env.API_URL ?? "http://localhost:4000";
+const API_URL = process.env.API_URL ?? 'https://portfolio-maker-3ny1.onrender.com:4000';
+// const API_URL = process.env.API_URL ?? "http://localhost:4000";
 
 type UserCredentials = {
   email: string;
