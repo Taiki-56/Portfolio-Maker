@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { UsersSearch } from "../interfaces/users";
 
-const API_URL = process.env.API_URL ?? 'https://portfolio-maker-3ny1.onrender.com:4000';
+const API_URL = process.env.API_URL ?? 'https://portfolio-maker-3ny1.onrender.com';
 // const API_URL = process.env.API_URL ?? "http://localhost:4000";
 
 export const getUser = async (id: string): Promise<{ user: User } | { error: string; }> => {
