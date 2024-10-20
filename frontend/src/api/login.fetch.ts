@@ -18,8 +18,6 @@ type LoginResponse = {
 export const fetchLogin = async (
   credentials: UserCredentials
 ): Promise<LoginResponse> => {
-  console.log(API_URL);
-
   const response = await fetch(`${API_URL}/api/auth/login`, {
     method: "POST",
     headers: {
