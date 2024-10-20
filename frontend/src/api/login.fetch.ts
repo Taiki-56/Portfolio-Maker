@@ -1,7 +1,7 @@
 "use server";
 
-
-const API_URL = process.env.API_URL ?? 'https://portfolio-maker-3ny1.onrender.com';
+const API_URL =
+  process.env.API_URL ?? "https://portfolio-maker-3ny1.onrender.com";
 // const API_URL = process.env.API_URL ?? "http://localhost:4000";
 
 type UserCredentials = {
@@ -15,7 +15,11 @@ type LoginResponse = {
   token?: string;
 };
 
-export const fetchLogin = async (credentials: UserCredentials): Promise<LoginResponse> => {
+export const fetchLogin = async (
+  credentials: UserCredentials
+): Promise<LoginResponse> => {
+  console.log(API_URL);
+
   const response = await fetch(`${API_URL}/api/auth/login`, {
     method: "POST",
     headers: {
